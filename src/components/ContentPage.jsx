@@ -33,14 +33,18 @@ const ContentPage = ({ onGoBackClick }) => {
 
   return (
     <div>
-      <h1>{counter}/18</h1>
+      <h1>
+        {counter === 0 ? "Здравствуйте! Нажмите начать" : `${counter}/18`}
+      </h1>
       {randomImage && (
         <div>
           <img src={randomImage} alt="Random" style={{ width: "100%" }} />
         </div>
       )}
       {/* <button onClick={onGoBackClick}>Закончить</button> */}
-      <button onClick={pickRandomImage}>Следующая картинка</button>
+      <button onClick={pickRandomImage}>
+        {counter === 0 ? "НАЧАТЬ" : "Следующая страница"}
+      </button>
     </div>
   );
 };
