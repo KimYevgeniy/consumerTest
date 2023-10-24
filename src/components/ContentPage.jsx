@@ -57,7 +57,7 @@ const ContentPage = ({ onGoBackClick }) => {
 
   return (
     <div>
-      <h1 style={{ width: "100%" }}>
+      <h1 style={{ width: "90%" }}>
         {counter === 0 ? "Здравствуйте! Нажмите начать" : `${counter}/18`}
       </h1>
       {randomImage && (
