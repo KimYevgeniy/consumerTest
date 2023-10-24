@@ -36,7 +36,7 @@ const ContentPage = ({ onGoBackClick }) => {
       <h1>{counter}/18</h1>
       {randomImage && (
         <div>
-          <img src={randomImage} alt="Random" style={{ width: 375 }} />
+          <img src={randomImage} alt="Random" style={{ width: "100%" }} />
         </div>
       )}
       {/* <button onClick={onGoBackClick}>Закончить</button> */}

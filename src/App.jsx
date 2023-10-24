@@ -4,7 +4,7 @@ import ContentPage from "./components/ContentPage.jsx";
 import "./App.css";
 
 function App() {
-  const [showContent, setShowContent] = useState(false);
+  const [showContent, setShowContent] = useState(true);
 
   const handleStartClick = () => {
     setShowContent(true);
