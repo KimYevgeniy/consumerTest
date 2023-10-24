@@ -11,7 +11,7 @@ function App() {
   };
 
   const handleGoBackClick = () => {
-    setShowContent(!confirm("Press a button!\nEither OK or Cancel."));
+    setShowContent(!confirm("Хотите вернуться назад?\nОк или Отмена."));
   };
 
   return (

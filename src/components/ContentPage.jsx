@@ -1,11 +1,35 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import assets from "./assets";
 
 const ContentPage = ({ onGoBackClick }) => {
+  const [images, setImages] = useState(assets);
+
+  useEffect(() => {
+    const preloadImages = () => {
+      const loadedImages = [];
+      const imagePromises = assets.map((imageUrl) => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.src = imageUrl;
+          img.onload = () => {
+            loadedImages.push(img);
+            resolve();
+          };
+        });
+      });
+
+      Promise.all(imagePromises).then(() => {
+        setImages(loadedImages);
+      });
+    };
+
+    preloadImages();
+  }, [assets]);
+
   const [randomImage, setRandomImage] = useState(null);
-  const [remainingImages, setRemainingImages] = useState(assets);
+  const [remainingImages, setRemainingImages] = useState(images);
   const [counter, setCounter] = useState(0);
 
   const moveToTop = () => {
@@ -42,7 +66,15 @@ const ContentPage = ({ onGoBackClick }) => {
         </div>
       )}
       {/* <button onClick={onGoBackClick}>Закончить</button> */}
-      <button onClick={pickRandomImage}>
+      <button
+        onClick={pickRandomImage}
+        style={{
+          marginTop: 10,
+          marginBottom: 25,
+          backgroundColor: "turquoise",
+          color: "black",
+        }}
+      >
         {counter === 0 ? "НАЧАТЬ" : "Следующая страница"}
       </button>
     </div>
