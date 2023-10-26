@@ -33,7 +33,10 @@ const ContentPage = ({ onGoBackClick }) => {
   const [counter, setCounter] = useState(0);
 
   const moveToTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    });
+    // window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   const pickRandomImage = () => {
