@@ -66,7 +66,7 @@ const ContentPage = ({ onGoBackClick }) => {
             Здравствуйте! <br /> Нажмите начать
           </div>
         ) : (
-          `${counter}/14`
+          `${counter}/${assets.length}`
         )}
       </h3>
       {randomImage && (
